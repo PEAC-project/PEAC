@@ -19,7 +19,7 @@ p {
   color: white;
   border-radius: 15px;
   background-color: black;
-  border: 3px solid var(--a)
+  border: 3px solid var(--a);
   font-size: 20px;
 }
 .bold {
