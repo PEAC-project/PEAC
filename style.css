@@ -10,7 +10,7 @@ p {
 }
 .navigation {
   position: fixed;
-  color: black;
+  background-color: black;
 }
 .navigation button {
   color: white;
