@@ -1,11 +1,13 @@
 body {
   background-color: #F0FAFF;
-  color: #4E5458;
-  font-family: 'Azeret Mono', monospace;
+  --a: green;
 }
 p {
   font-family: 'Work Sans', sans-serif;
   color: #4E5458;
   font-weight: 800;
   font-size: 25px;
+}
+.bold {
+  font-family: 'Azeret Mono', monospace;
 }
