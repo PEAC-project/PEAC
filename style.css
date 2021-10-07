@@ -16,6 +16,7 @@ p {
   color: white;
   border-radius: 5px;
   background-color: black;
+  border: 3px solid var(--a)
 }
 .bold {
   font-family: 'Azeret Mono', monospace;
