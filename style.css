@@ -1,6 +1,8 @@
 body {
   background-color: #F0FAFF;
   --a: #FFF700;
+  margin: 0px;
+  padding: 0px;
 }
 p {
   font-family: 'Work Sans', sans-serif;
@@ -11,6 +13,7 @@ p {
 .navigation {
   position: fixed;
   background-color: black;
+  width:100%
 }
 .navigation button {
   color: white;
