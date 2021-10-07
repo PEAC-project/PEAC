@@ -13,7 +13,8 @@ p {
 .navigation {
   position: fixed;
   background-color: black;
-  width:100%
+  width:100%;
+  padding: 5px;
 }
 .navigation button {
   color: white;
@@ -21,6 +22,7 @@ p {
   background-color: black;
   border: 3px solid var(--a);
   font-size: 20px;
+  padding: 5px;
 }
 .bold {
   font-family: 'Azeret Mono', monospace;
