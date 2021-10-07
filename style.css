@@ -5,5 +5,6 @@ body {
 }
 p {
   font-family: 'Work Sans', sans-serif;
-  color: red;
+  color: #4E5458;
+  font-weight: 200;
 }
