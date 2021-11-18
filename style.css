@@ -21,6 +21,8 @@ p {
   background-color: black;
   border:0px;
   font-size:25px;
+  height:100%;
+  padding:auto;
 }
 .navigation img {
   height:100%;
