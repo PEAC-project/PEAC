@@ -35,3 +35,7 @@ p {
   font-family: 'Azeret Mono', monospace;
 }
 y{color:var(--a);}
+.title{
+  font-family: 'Azeret Mono', monospace;
+  font-size:54px;
+}
