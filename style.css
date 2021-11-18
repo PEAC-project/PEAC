@@ -22,7 +22,8 @@ p {
   border:0px;
   font-size:25px;
   height:100%;
-  padding:auto;
+  padding:0px;
+  margin:0px;
 }
 .navigation img {
   height:100%;
