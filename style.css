@@ -14,16 +14,16 @@ p {
   position: fixed;
   background-color: black;
   width:100%;
-  padding: 5px;
 }
 .navigation button {
   color: white;
   background-color: black;
   font-size: 20px;
   border:0px;
+  padding:2px;
 }
 .navigation button:hover {
-  background-color:#ddd;
+  background-color:#333;
 .bold {
   font-family: 'Azeret Mono', monospace;
 }
