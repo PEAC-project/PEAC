@@ -17,8 +17,6 @@ p {
   background-color: black;
   width:100%;
   height:70px;
-  padding-left:10px;
-  padding-right:10px;
 }
 .navigation button {
   color: white;
@@ -26,6 +24,8 @@ p {
   border:0px;
   font-size:25px;
   height:100%;
+  padding-left:10px;
+  padding-right:10px;
 }
 .navigation img {
   height:100%;
