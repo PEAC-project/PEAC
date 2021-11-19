@@ -21,8 +21,15 @@
   <link rel="stylesheet" href="style.css">
   </head>
 <body>
+  <script>function hover(element) {
+  element.setAttribute('src', 'http://dummyimage.com/100x100/eb00eb/fff');
+}
+
+function unhover(element) {
+  element.setAttribute('src', 'http://dummyimage.com/100x100/000/fff');
+}</script>
   <div class="navigation">
-    <div class="logo-img">&nbsp;</div>
+    <img id="my-img" src="http://dummyimage.com/100x100/000/fff" onmouseover="hover(this);" onmouseout="unhover(this);" />
     <button>Item One</button>
     <button>Item Two</button>
     <img src="logo-hover.png">
