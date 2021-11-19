@@ -33,13 +33,6 @@ p {
 .navigation button:hover {
   background-color:#666;
 }
-.logo-img {
-    background: url('logo.png');
-    height:100%;
-}
-.logo-img:hover {
-    background: url('logo-hover.png');
-}
 .bold {
   font-family: 'Azeret Mono', monospace;
 }
