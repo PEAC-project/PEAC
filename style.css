@@ -33,6 +33,12 @@ p {
 .navigation button:hover {
   background-color:#666;
 }
+.logo-img {
+    background: url('http://dummyimage.com/100x100/000/fff');
+}
+.logo-img:hover {
+    background: url('http://dummyimage.com/100x100/eb00eb/fff');
+}
 .bold {
   font-family: 'Azeret Mono', monospace;
 }
