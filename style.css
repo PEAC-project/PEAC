@@ -35,6 +35,7 @@ p {
 }
 .logo-img {
     background: url('logo.png');
+    height:100%;
 }
 .logo-img:hover {
     background: url('logo-hover.png');
