@@ -13,7 +13,6 @@ p {
 .navigation {
   position: fixed;
   display:flex;
-  justify-content: space-between;
   align-items: center;
   background-color: black;
   width:100%;
@@ -25,8 +24,6 @@ p {
   border:0px;
   font-size:25px;
   height:100%;
-  padding:0px;
-  margin:0px;
 }
 .navigation img {
   height:100%;
