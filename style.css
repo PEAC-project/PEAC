@@ -44,7 +44,7 @@ y{color:var(--a);}
 .title{
   font-size:100px;
   font-family: 'Montserrat', sans-serif;
-  margin-left:50px;
+  padding-left:50px;
 }
 .titleDiv {
   display:flex;
