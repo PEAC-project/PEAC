@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+	<head>
+		<meta name="viewport" content="width=320, initial-scale=1" />
+		<meta charset="utf-8" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+		/>
+		<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			rel="stylesheet"
+		/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+      <link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+      
+      <nav>
+  <ul>
+    <li><strong><a href="Limit The Screens Calculator.html">LIMIT THE SCREENS</a></strong></li>
+  </ul>
+  <ul>
+    <li><a href="Screentime Calculator.html">Screentime Calculator</a></li>
+    <li><a href="Twin Lakes' Average.html">Twin Lakes' Average</a></li>
+  </ul>
+</nav>
+      
+      
+      
+      <div style="padding:5%;">
+              <div data-aos="fade-right">
+			<h1 class="title"><b>LIMIT</b></h1>
+		</div>
+      <div data-aos="fade-left">
+			<h1 class="title">THE</h1>
+		</div>
+              <div data-aos="fade-right">
+                <h1 class="title"><b>SCREENS</b></h1>
+   <br><br>
+      </div>
+       		<div data-aos="fade-left">
+			<h1 class="heading">Twin Lake's Average</h1>
+          <p>
+            Do you think your screentime is too high? Above average? Perfectly low? Check our Twin Lake’s average screentime statistics. This data is 100% taken from participants like you! To add the the average (if you haven’t already), <a href="Screentime Calculator.html">Go Here</a>
+          </p>
+              </div>
+ 
+        <div id="main" hidden="true">
+          
+        
+		<div id = "participants"></div>
+
+        <canvas id="allData"></canvas>
+          <p class="sub">
+            Educational/Creational Screen Time Hours
+          </p>
+
+          
+          <p>
+            The graph of all the data may be crude, however it is accurate. Let’s split the graph into two separate graphs, rounding the data to the nearest hour to effectively see any patterns.
+          </p>
+
+     <canvas id="fullHours"></canvas>
+                    <p class="sub">
+            Average Hours Spent On a Phone
+          </p>
+          
+               <canvas id="fullCteation"></canvas>
+                    <p class="sub">
+            Average Hours Spent On a Phone For Creational/Educational Purposes
+          </p>
+          <div id="message">
+            
+          </div>
+</div>
+		<!--
+use local storage to try and make so reponses can't be entered multiple times
+fade-up-left?
+qoutes-->
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!--<script>
+			const labels = [
+				"January",
+				"February",
+				"March",
+				"April",
+				"May",
+				"June",
+			];
+
+			const data = {
+				labels: labels,
+				datasets: [
+					{
+						label: "My First dataset",
+						backgroundColor: "rgb(255, 99, 132)",
+						borderColor: "rgb(255, 99, 132)",
+						data: [0, 10, 5, 2, 20, 30, 45],
+					},
+				],
+			};
+
+			const config = {
+				type: "line",
+				data: data,
+				options: {},
+			};
+		</script>
+
+		<script>
+			const myChart = new Chart(
+				document.getElementById("myChart"),
+				config
+			);
+		</script>-->
+
+		<script>
+          
+  const mode = a => 
+  Object.values(
+    a.reduce((count, e) => {
+      if (!(e in count)) {
+        count[e] = [0, e];
+      }
+      
+      count[e][0]++;
+      return count;
+    }, {})
+  ).reduce((a, v) => v[0] < a[0] ? a : v, [0, null])[1];
+          
+			var gotResult = false;
+			get();
+			//wait instead
+			setTimeout(function () {
+              fill()
+			}, 1000);
+
+			function syncDelay(milliseconds) {
+				let start = new Date().getTime();
+				let end = 0;
+				while (end - start < milliseconds) {
+					end = new Date().getTime();
+				}
+			}
+
+			function get() {
+				var myHeaders = new Headers();
+				myHeaders.append("Content-Type", "application/json");
+
+				var requestOptions = {
+					method: "GET",
+					headers: myHeaders,
+					redirect: "follow",
+				};
+
+				fetch(
+					"https://getpantry.cloud/apiv1/pantry/5c3879eb-92c2-49b9-babf-f3be4208cbf3/basket/average",
+					requestOptions
+				)
+					.then((response) => response.text())
+					.then((result) => got(result))
+					.catch((error) => console.log("error", error));
+			}
+
+			function got(result) {
+				gotResult = JSON.parse(result)
+			}
+          
+function fill() {
+  console.log(gotResult)
+  gotResult = {
+number: 5,
+hours: [4, 5, 24, 0, 4,5],
+creation: [2, 2, 24, 0, 2,2]}
+  
+  let number = gotResult.number
+  let hours = gotResult.hours
+  let creation = gotResult.creation
+  let tHours = gotResult.hours.reduce((a, b) => a + b, 0)
+  let tCreation = gotResult.creation.reduce((a, b) => a + b, 0)
+  console.log(tHours/hours.length)
+  document.getElementById("main").hidden = false
+           
+  document.getElementById("participants").innerHTML = `<h1>The Following Statistics Have Been Conceived From <b>${number}</b> People</h1>`
+ 
+  document.getElementById("message").innerHTML = `<h1 class="heading">Therefore, we can see...</h1><ul>
+<li>The daily median hours spent on a phone is <b>${Math.round(tHours/hours.length)}</b></li>
+
+<li>The daily mode of hours spent on a phone is <b>${mode(hours)}</b></li>
+
+<li>The daily median hours spent on a phone for creational/educational purposes is <b>${Math.round(tCreation/creation.length)}</b></li>
+
+<li>The daily mode of hours spent on a phone for creational/educational purposes is <b>${mode(creation)}</b></li>
+
+<p style="margin-top:20px">We can also see that <b>collectively</b>, everyone who added to these statistics spends a total of <b>${tHours}</b> hours on our phones daily. The ratio of creational/educational to entertainment screentime goes as followed:</p>
+</ul>`
+  
+  
+ 
+  function empyDic() {
+    dic ={}
+    for(var i = -1; i < 25; i++) {
+      dic[i]=0
+    }
+    dic[25]=" h"
+    return dic
+  }
+  
+     sets = {}
+     for(var i = 0, l = hours.length; i < l; i++) {
+       let x = creation[i], y = hours[i]
+       if (sets[String(x) + ":" + String(y)]){
+sets[String(x) + ":" + String(y)].r += 1
+} else {
+sets[String(x) + ":" + String(y)] = {x:x,y:y,r:1}
+}
+     }
+
+ const chart = new Chart(document.getElementById("allData"),{type: 'bubble',
+  data:  {
+  datasets: [{
+    label: 'Full Dataset',
+    data: Object.values(sets),
+    backgroundColor: '#fff700'
+  }]
+},
+  options: {
+plugins: {
+  legend: {
+    display: false
+   },
+            title: {
+                display: true,
+                text: 'Hours Spent On A Phone',
+                font:	{size: 18},
+                color: "#bbbbbb"
+            }
+    },
+    scales : {
+y: {
+      title: {
+        display: true,
+        text: 'Total Hours',
+        color:"#bbbbbb"
+      }
+    }
+      
+}
+ 
+  }     
+})
+
+set = empyDic()
+     for(var i = 0, l = hours.length; i < l; i++) {
+       let x = Math.round(hours[i])
+set[String(x)] += 1
+     }
+       
+          const Chart2 = new Chart(document.getElementById("fullHours"), {
+				type: "line",
+				data:  {
+				labels: ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","24"],
+				datasets: [
+					{
+						label:"Value",
+						backgroundColor: "#fff700",
+						data: Object.values(set),
+					},
+				],
+			},
+				options: {
+                  plugins: {
+                    legend: {
+    display: false
+   },
+            title: {
+                display: true,
+                text: 'Total Hours On A Phone',
+                font:	{size: 18},
+                color: "#bbbbbb"
+            }
+    },
+    scales : {
+y: {
+      title: {
+        display: true,
+        text: 'Number Of People',
+        color:"#bbbbbb"
+      },
+  min:0
+    }
+}
+  }     }
+                
+			)
+          
+          set = empyDic()
+     for(var i = 0, l = creation.length; i < l; i++) {
+       let x = Math.round(creation[i])
+set[String(x)] += 1
+     }
+          const Chart3 = new Chart(document.getElementById("fullCteation"), {
+				type: "line",
+				data:  {
+				labels: ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","24"],
+				datasets: [
+					{
+						label: "Value",
+						backgroundColor: "#fff700",
+						data: Object.values(set),
+					},
+				],
+			},
+				options: {
+                  plugins: {
+                    legend: {
+    display: false
+   },
+            title: {
+                display: true,
+                text: 'Total Screentime for Creational/Educational Purposes',
+                font:	{size: 18},
+                color: "#bbbbbb"
+            }
+    },
+    scales : {
+y: {
+      title: {
+        display: true,
+        text: 'Number Of People',
+        color:"#bbbbbb"
+      },
+  min:0
+    }
+}
+  }     }
+                
+			)
+          
+          }
+		</script>
+        </div>
+	</body>
+</html>

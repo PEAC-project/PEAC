@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+	<head>
+		<meta name="viewport" content="width=320, initial-scale=1" />
+		<meta charset="utf-8" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+		/>
+		<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			rel="stylesheet"
+		/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+      <link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+      
+      <nav>
+  <ul>
+    <li><strong><a href="Limit The Screens Calculator.html">LIMIT THE SCREENS</a></strong></li>
+  </ul>
+  <ul>
+    <li><a href="Screentime Calculator.html">Screentime Calculator</a></li>
+    <li><a href="Twin Lakes' Average.html">Twin Lakes' Average</a></li>
+  </ul>
+</nav>
+      
+      
+      
+      <div style="padding:5%;">
+      
+      
+        <div data-aos="fade-right">
+			<h1 class="title"><b>LIMIT</b></h1>
+		</div>
+      <div data-aos="fade-left">
+			<h1 class="title">THE</h1>
+		</div>
+              <div data-aos="fade-right">
+                <h1 class="title"><b>SCREENS</b></h1>
+		<svg></svg>
+   
+      </div>
+ 
+		
+		<div data-aos="fade-right">
+			<h1>The Average Amount Of Screen Time Per Day Is <b>7</b> Hours</h1>
+		</div>
+		<div data-aos="fade-left">
+			<h1>Lets say that you maintain that average throughout your whole life</h1>
+		</div>
+		<div data-aos="fade-right">
+			<h1>You would spend more than  <b>209,781 hours</b> onscreen</h1>
+		</div>
+		<div data-aos="fade-left">
+			<h1>More than <b>8,740 days</b> onscreen</h1>
+		</div>
+		<div data-aos="fade-right">
+			<h1>almost <b>24 years</b> onscreen</h1>
+		</div>
+      
+        <div data-aos="fade-left">
+			<h1>That's like <b>43.75%</b> of your waking hours onscreen</h1>
+		</div>
+      
+        <div data-aos="fade-right">
+			<h1>In that time, you could master more than <b>20 skills</b></h1>
+		</div>
+
+
+        <button>Scroll to My Inititive</button>
+        
+        <div data-aos="fade-right">    
+        <h1 class="heading">My Process</h1>
+      <p>Like all good thing, this project was years in the making. My journey through PEAC has introduced so many opportunities to challenge my thinking and explore the <a href="https://www.interaction-design.org/literature/topics/design-thinking">design thinking process</a></p>
+        </div>
+        <div data-aos="fade-left">    
+        <h1 class="heading">Self-Discovery</h1>
+      <p>I started with exploring my <b>passions</b>, <b>values</b>, and <b>motivations</b> to find a project worthy to pursue.</p>
+
+<p>Eventually, I decided to focus on the topic of <b>health hobbies</b>. I thought that I could make a quick Google Site that outlines the benefits of healthy hobbies and how to find them. However, that’s not what PEAC is about.</p>
+        </div>
+        <div data-aos="fade-right">    
+        <h1 class="heading">Empathize</h1>
+      <p>In this phase, you work to fully <b>understand</b> your <b>user</b> (the person who you are trying to help).</p>
+
+<p>I started by doing a lot of research. Here are my key findings:</p>
+          <ul>
+<li><b>20.25%</b> of people don’t have a hobby</li>
+
+<li>Teens who don’t spend any time doing extracurricular activities are:
+<ul><li><b>57%</b> more likely to <b>drop out</b> of high school</li>
+<li><b>49%</b> more likely to <b>use drugs</b> during their high school years</li>
+  <li><b>37%</b> more likely to <b>become teen parents</b> during their high school years</li>
+<li><b>35%</b> more likely to <b>smoke cigarettes</b> during their high school years</li>
+<li><b>27%</b> more likely to <b>get arrested</b> during their high school years</li>
+</ul>
+<li>Engaging in enjoyable leisurely activities:</li><ul>
+<li>Lowers blood pressure</li>
+<li>Lowers cholesterol</li>
+<li>Lowers waist circumference</li>
+<li>Lower body mass index</li>
+<li><b>34%</b> less stressed and <b>18%</b> less sad during the activities</li></ul></ul>
+        </div>
+        
+		<div>
+			<canvas id="myChart"></canvas>
+		</div>
+
+		<!--
+use local storage to try and make so reponses can't be entered multiple times
+fade-up-left?
+qoutes-->
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+		<script>
+			const labels = [
+				"January",
+				"February",
+				"March",
+				"April",
+				"May",
+				"June",
+			];
+
+			const data = {
+				labels: labels,
+				datasets: [
+					{
+						label: "My First dataset",
+						backgroundColor: "rgb(255, 99, 132)",
+						borderColor: "rgb(255, 99, 132)",
+						data: [0, 10, 5, 2, 20, 30, 45],
+					},
+				],
+			};
+
+			const config = {
+				type: "line",
+				data: data,
+				options: {},
+			};
+		</script>
+
+		<script>
+			const myChart = new Chart(
+				document.getElementById("myChart"),
+				config
+			);
+		</script>
+        </div>
+	</body>
+</html>

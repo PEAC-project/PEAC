@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+	<head>
+		<meta name="viewport" content="width=320, initial-scale=1" />
+		<meta charset="utf-8" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+		/>
+		<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			rel="stylesheet"
+		/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+      <link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+      
+      <nav>
+  <ul>
+    <li><strong><a href="Limit The Screens Calculator.html">LIMIT THE SCREENS</a></strong></li>
+  </ul>
+  <ul>
+    <li><a href="Screentime Calculator.html">Screentime Calculator</a></li>
+    <li><a href="Twin Lakes' Average.html">Twin Lakes' Average</a></li>
+  </ul>
+</nav>
+      
+      
+      
+      <div style="padding:5%;">
+      
+      
+        <div data-aos="fade-right">
+			<h1 class="title"><b>LIMIT</b></h1>
+		</div>
+      <div data-aos="fade-left">
+			<h1 class="title">THE</h1>
+		</div>
+              <div data-aos="fade-right">
+                <h1 class="title"><b>SCREENS</b></h1>
+              </div>
+        <br><br>
+ 		<div data-aos="fade-left">
+			<h1 class="heading">Screentime Calculator</h1>
+          <p>
+            Discover how much screentime you average and explore the amount of time you <b>could</b> spend on a phone. Just answer the following 3 questions and select Submit.
+          </p>
+          <p>
+            Make sure you only enter numbers between 0-24 and the second question should not be greater than the first one.
+          </p>
+		</div>
+         		<div data-aos="fade-right">
+                  <form onsubmit="formValidation()">
+<label for="total">How many hours are you on your phone each day (for any purpose)?</label>
+<input id="total" type="number" name="total" min="0" max="24" value="0" step="0.0000000001">
+
+<label for="creation">How many hours are you on your phone each day for creation-based or educational purposes (such as coding, digital art, music creation, school, research, etc...)?</label>
+<input id="creation" type="number" name="creation" value="0">
+             
+                    <button type='button' onclick="load(formValidation())">Submit</button>
+                  </form>
+		</div>
+        <div id = "stats"></div>
+        <div id="snackbar">Your response has been added to the average</div>
+
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+
+
+		<script>
+          formValidation()
+          var gotResult;
+          function formValidation(){
+let total = parseFloat( document.getElementById("total").value)
+            let creation = parseFloat( document.getElementById("creation").value)
+            let valid = true
+if (isNaN(total)||total>24){
+document.getElementById("total").setAttribute("aria-invalid",true)
+valid = false
+} else {
+document.getElementById("total").setAttribute("aria-invalid",false)
+}
+if (isNaN(creation)||creation > total){
+document.getElementById("creation").setAttribute("aria-invalid",true)
+  valid = false
+} else {
+document.getElementById("creation").setAttribute("aria-invalid",false)
+}
+            return valid
+}
+          
+
+const creation = document.getElementById("creation").addEventListener('keyup', event => {
+formValidation()
+})
+const total = document.getElementById("total").addEventListener('keyup', event => {
+formValidation()
+})
+          
+function load(bool) {
+  if (bool){
+  let total = parseFloat( document.getElementById("total").value)
+            let creation = parseFloat( document.getElementById("creation").value)
+            let hours = Math.floor(82.05 * 365.25 * total)
+            let days = Math.floor(hours/24)
+            let years = Math.floor(days/365.25)
+            let precent = Math.floor(total/16*100)
+            let skills = Math.floor(hours/10000)
+            let hours2 = Math.floor(82.05 * 365.25 * (total-creation))
+            let days2 = Math.floor(hours2/24)
+            let years2 = Math.floor(days2/365.25)
+            let precent2 = Math.floor((total-creation)/16*100)
+            let skills2 = Math.floor(hours2/10000)
+  document.getElementById("stats").innerHTML = `
+		<div data-aos="fade-right">
+			<h1>Your Average Amount Of Screen Time Per Day Is <b>${document.getElementById("total").value}</b> Hours</h1>
+		</div>
+		<div data-aos="fade-left">
+			<h1>Lets say that you maintain that average throughout your whole life</h1>
+		</div>
+		<div data-aos="fade-right">
+			<h1>You would spend more than <b>${hours} hours</b> onscreen</h1>
+		</div>
+		<div data-aos="fade-left">
+			<h1>More than <b>${days} days</b> onscreen</h1>
+		</div>
+		<div data-aos="fade-right">
+			<h1>almost <b>${years} years</b> onscreen</h1>
+		</div>
+      
+        <div data-aos="fade-left">
+			<h1>That's like <b>${precent}%</b> of your waking hours onscreen</h1>
+		</div>
+      
+        <div data-aos="fade-right">
+			<h1>In that time, you could master more than <b>${skills} skills</b></h1>
+		</div>
+        <div data-aos="fade-left">
+			<h1>How much more screentime do you accumulate from <b>computers</b> and <b>TVs</b>?</b></h1>
+		</div>
+        <div data-aos="fade-right">
+			<p>Not all of your screentime is for <b>entertainment</b>, some of it is neccesary (like schoolwork) or healthy like challenging your artistic talent. The following is only for your <b>entertainment-based screentime</b>.</p>
+		</div>
+		<div data-aos="fade-right">
+			<h1>Your Average Amount Of Entertainment based Screen Time Per Day Is <b>${Math.floor(total-creation)}</b> Hours</h1>
+		</div>
+		<div data-aos="fade-left">
+			<h1>Lets say that you maintain that average throughout your whole life</h1>
+		</div>
+		<div data-aos="fade-right">
+			<h1>You would spend more than <b>${hours2} hours</b> onscreen</h1>
+		</div>
+		<div data-aos="fade-left">
+			<h1>More than <b>${days2} days</b> onscreen</h1>
+		</div>
+		<div data-aos="fade-right">
+			<h1>almost <b>${years2} years</b> onscreen</h1>
+		</div>
+      
+        <div data-aos="fade-left">
+			<h1>That's like <b>${precent2}%</b> of your waking hours onscreen</h1>
+		</div>
+      
+        <div data-aos="fade-right">
+			<h1>In that time, you could master more than <b>${skills2} skills</b></h1>
+		</div>
+<button onclick="addToTwin()">Add To Twin Lakes' Average</button>
+`
+  document.getElementById("total").disabled = true
+  document.getElementById("creation").disabled = true
+}}
+//localStorage.happened = false
+          
+     
+function addToTwin(){
+  if (!(localStorage.happened == "true")) {
+localStorage.happened = true
+    get();
+	//wait instead
+    setTimeout(function () {
+      console.log(gotResult)
+		gotResult.number += 1
+        gotResult.hours.push(parseFloat( document.getElementById("total").value))
+        gotResult.creation.push(parseFloat( document.getElementById("creation").value))
+      set(gotResult)
+      snack()
+	}, 1000);
+} else {
+//already happened
+  document.getElementById("snackbar").innerHTML = "You have already added your average"
+  snack()
+}
+}
+          
+ function snack() {
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+          
+          
+			function syncDelay(milliseconds) {
+				let start = new Date().getTime();
+				let end = 0;
+				while (end - start < milliseconds) {
+					end = new Date().getTime();
+				}
+			}
+
+			function reset() {
+				set({
+					number: 0,
+                    hours: [],
+                    creation: []
+				});
+			}
+			function get() {
+				var myHeaders = new Headers();
+				myHeaders.append("Content-Type", "application/json");
+
+				var requestOptions = {
+					method: "GET",
+					headers: myHeaders,
+					redirect: "follow",
+				};
+
+				fetch(
+					"https://getpantry.cloud/apiv1/pantry/5c3879eb-92c2-49b9-babf-f3be4208cbf3/basket/average",
+					requestOptions
+				)
+					.then((response) => response.text())
+					.then((result) => got(result))
+					.catch((error) => console.log("error", error));
+			}
+
+			function set(json) {
+				var myHeaders = new Headers();
+				myHeaders.append("Content-Type", "application/json");
+
+				var raw = JSON.stringify(json);
+
+				var requestOptions = {
+					method: "POST",
+					headers: myHeaders,
+					body: raw,
+					redirect: "follow",
+				};
+
+				fetch(
+					"https://getpantry.cloud/apiv1/pantry/5c3879eb-92c2-49b9-babf-f3be4208cbf3/basket/average",
+					requestOptions
+				)
+					.then((response) => response.text())
+					.then((result) => console.log(result))
+					.catch((error) => console.log("error", error));
+			}
+
+			function got(result) {
+				gotResult = JSON.parse(result)
+			}
+		</script>
+        </div>
+	</body>
+</html>
