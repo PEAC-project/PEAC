@@ -97,7 +97,7 @@ font-size:10px;
 
 @media (max-width: 480px) {
 
-     p{
+     body, html {
 	     font-size:14px;
 	}
 .title{
