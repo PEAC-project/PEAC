@@ -97,7 +97,12 @@ font-size:10px;
 
 
 
-
+.main{
+	margin:10%;
+	margin-left:20%;
+	margin-right:20%;
+	
+}
 @media (max-width: 480px) {
 
      body, html,p {
@@ -106,5 +111,8 @@ font-size:10px;
 .title{
 	font-size:60px;
 	}
+	.main{
+	margin:5%;
+}
 }
 
