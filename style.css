@@ -88,3 +88,16 @@ nav a {text-decoration: none;}
 font-size:10px;
   text-align:center;
 }
+
+
+
+
+
+
+
+@media min-device-width: 480px {
+.title {
+	font-size:70PX;
+	}
+	
+}
