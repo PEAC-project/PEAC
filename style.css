@@ -97,10 +97,10 @@ font-size:10px;
 
 @media (max-width: 480px) {
 
-     body, html {
+     body, html,p {
 	     font-size:14px;
 	}
 .title{
-	font-size:60PX;
+	font-size:60px;
 	}
 }
