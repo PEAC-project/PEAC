@@ -9,6 +9,9 @@ body,
 				--primary: #fff700;
 				--primary-hover: rgba(255, 255, 0, 0.86);
 			}
+p {
+	font: Arial 30px;	
+}
 			button {
 				color: black;
 			}
@@ -98,7 +101,7 @@ font-size:10px;
 @media (max-width: 480px) {
 
      body, html,p {
-	     font-size:14px;
+	     font: Arial 14px;
 	}
 .title{
 	font-size:60px;
