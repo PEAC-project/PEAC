@@ -3,6 +3,10 @@
 	<head>
 		<meta name="viewport" content="width=320, initial-scale=1" />
 		<meta charset="utf-8" />
+              <title>Screentime Calculator</title> 
+  
+  <link rel="icon" type="image/png" href="icon.png">
+		<meta name="viewport" content="width=320, initial-scale=1" />
 		<link
 			rel="stylesheet"
 			href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
@@ -18,7 +22,7 @@
       
       <nav>
   <ul>
-    <li><strong><a href="Limit The Screens Calculator.html">LIMIT THE SCREENS</a></strong></li>
+    <li><strong><a href="index.html">LIMIT THE SCREENS</a></strong></li>
   </ul>
   <ul>
     <li><a href="Screentime Calculator.html">Screentime Calculator</a></li>
@@ -28,7 +32,7 @@
       
       
       
-      <div style="padding:5%;">
+      <div class="main">
       
       
         <div data-aos="fade-right">
@@ -41,8 +45,16 @@
                 <h1 class="title"><b>SCREENS</b></h1>
               </div>
         <br><br>
+         <blockquote>
+“A journey of a thousand sites begins with a single click.”
+  <footer>
+    <cite>- Author Unknown</cite>
+  </footer>
+</blockquote>
  		<div data-aos="fade-left">
+          
 			<h1 class="heading">Screentime Calculator</h1>
+
           <p>
             Discover how much screentime you average and explore the amount of time you <b>could</b> spend on a phone. Just answer the following 3 questions and select Submit.
           </p>
@@ -190,7 +202,7 @@ localStorage.happened = true
 	}, 1000);
 } else {
 //already happened
-  document.getElementById("snackbar").innerHTML = "You have already added your average"
+  document.getElementById("snackbar").innerHTML = "Someone on this device has already added to the average"
   snack()
 }
 }
