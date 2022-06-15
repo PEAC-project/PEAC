@@ -1,7 +1,4 @@
-			svg {
-				width:60%;
-}
-body,
+			body,
 			html {
 				margin: 0;
 				padding: 0;
@@ -9,9 +6,6 @@ body,
 				--primary: #fff700;
 				--primary-hover: rgba(255, 255, 0, 0.86);
 			}
-p {
-	font-size: 24px;	
-}
 			button {
 				color: black;
 			}
@@ -28,6 +22,10 @@ text-transform: capitalize;
           .material-symbols-outlined{font-size:80px;}
 a {
 text-decoration:underline;
+}
+.notA {
+text-decoration:none;
+  color:black;
 }
 nav{
   background-color: #18232c;
@@ -50,7 +48,7 @@ nav a {text-decoration: none;}
   color: #fff; /* White text color */
   text-align: center; /* Centered text */
   border-radius: 2px; /* Rounded borders */
-  padding: 16px; /* Padding */
+  padding: 10px; /* Padding */
   position: fixed; /* Sit on top of the screen */
   z-index: 1; /* Add a z-index if needed */
   left: 50%; /* Center the snackbar */
@@ -91,11 +89,32 @@ nav a {text-decoration: none;}
 font-size:10px;
   text-align:center;
 }
-
-
-
-
-
+.precentDiv{
+align-content:justify;
+  display:flex;
+}
+#left{
+background-color:var(--primary);
+border-bottom-left-radius:5px;
+border-top-left-radius:5px;
+}
+#right{
+  background-color: #18232c;
+  border-bottom-right-radius:5px;
+  border-top-right-radius:5px;
+}
+#right p, #left p{
+margin:5px;
+}
+#right p{
+text-align:right;
+}
+#left p{
+color:black;
+}
+svg {
+width:60%;
+}
 
 .main{
 	padding-top:10%;
@@ -116,4 +135,6 @@ font-size:10px;
 	padding:5%;
 }
 }
-
+h3 {
+margin-bottom:3px;
+}
